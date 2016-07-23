@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<configuration>
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://{{getenv "HDPClusterName"}}</value>
+  </property>
+  <property>
+    <name>ha.zookeeper.quorum</name>
+    <value>{{ $zk_link := split (getenv "ZK_SERVICE") "/" }}{{$zk_stack := index $zk_link 0}}{{ $zk_service := index $zk_link 1}}{{range $i, $e := ls (printf "/stacks/%s/services/%s/containers" $zk_stack $zk_service)}}{{if $i}},{{end}}{{getv (printf "/stacks/%s/services/%s/containers/%s/primary_ip" $zk_stack $zk_service $e)}}:2181{{end}}</value>
+  </property>
+
+  <!-- Trash minutes to allow recover of deleted files-->
+  <property>
+    <name>fs.trash.interval</name>
+    <value>30</value>
+  </property>
+  <property>
+    <name>fs.trash.checkpoint.interval</name>
+    <value>15</value>
+  </property>
+  <!-- Trash minutes to allow recover of deleted files-->
+
+  <!-- Hue WebHDFS proxy user setting -->
+  <property>
+    <name>hadoop.proxyuser.httpfs.hosts</name>
+    <value>*</value>
+  </property>
+  <property>
+    <name>hadoop.proxyuser.httpfs.groups</name>
+    <value>*</value>
+  </property>
+  <property>
+    <name>hadoop.proxyuser.hue.hosts</name>
+    <value>*</value>
+  </property>
+  <property>
+    <name>hadoop.proxyuser.hue.groups</name>
+    <value>*</value>
+  </property>
+  <!-- Hue WebHDFS proxy user setting -->
+
+</configuration>

@@ -1,0 +1,11 @@
+[template]
+src = "application.conf.tmpl"
+dest = "/opt/kafka-manager-1.3.0.8/conf/application.conf"
+owner = "root"
+mode = "0644"
+keys = [
+  "/self",
+  "/stacks",
+]
+
+reload_cmd = "/opt/kafka-manager/bin/restartkm.sh"

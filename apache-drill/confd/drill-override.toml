@@ -1,0 +1,9 @@
+[template]
+src = "drill-override.tmpl"
+dest = "/opt/drill/conf/drill-override.conf"
+owner = "root"
+mode = "0644"
+keys = [
+  "/self",
+  "/stacks",
+]     

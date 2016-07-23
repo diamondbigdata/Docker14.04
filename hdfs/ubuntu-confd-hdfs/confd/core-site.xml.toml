@@ -1,0 +1,9 @@
+[template]
+src = "core-site.xml.tmpl"
+dest = "/opt/hadoop/etc/hadoop/core-site.xml"
+owner = "root"
+mode = "0644"
+keys = [
+  "/self",
+  "/stacks",
+] 

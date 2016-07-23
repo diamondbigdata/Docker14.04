@@ -1,0 +1,2 @@
+#VERSION_NUMBER=2.2.2.0-460
+deb http://public-repo-1.hortonworks.com/ambari/ubuntu14/2.x/updates/2.2.2.0 Ambari main

@@ -1,0 +1,4 @@
+ambariinst.tar
+add ambari lists
+apt-get download ntp ambari-server ambari-agent mysql-connector-java
+tar the deb files from /var/cache/apt/archives

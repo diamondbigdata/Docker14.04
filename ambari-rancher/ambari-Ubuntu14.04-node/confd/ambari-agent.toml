@@ -1,0 +1,10 @@
+[template]
+src = "ambari-agent.tmpl"
+dest = "/etc/ambari-agent/conf/ambari-agent.ini"
+owner = "root"
+mode = "0755"
+keys = [
+  "/self",
+  "/stacks",
+]
+

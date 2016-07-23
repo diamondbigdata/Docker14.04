@@ -1,0 +1,9 @@
+[template]
+src = "host.tmpl"
+dest = "/etc/hosts"
+owner = "root"
+mode = "0644"
+keys = [
+  "/stacks",
+  "/containers",
+]
